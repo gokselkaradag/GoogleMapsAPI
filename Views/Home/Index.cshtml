@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapTrack - Google Maps Entegrasyonu</title>
+    <link rel="icon" href="~/map.png" type="image/x-icon" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar düzeni */
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+
+        /* Harita düzeni */
+        #map {
+            height: 500px; /* Harita yüksekliği artırıldı */
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer düzeni */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+        }
+
+            footer a {
+                color: #ffc107;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Harita -->
+    <div class="container">
+        <div id="map"></div>
+    </div>
+
+    <script>
+        let map, marker;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 39.92077, lng: 32.85411 },
+                zoom: 10,  // Yakınlaştırma artırıldı
+                styles: [  // Harita stilini değiştirdik
+                    {
+                        "featureType": "all",
+                        "elementType": "geometry",
+                        "stylers": [
+                            { "color": "#e7e7e7" }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [
+                            { "color": "#ffffff" }
+                        ]
+                    }
+                ]
+            });
+
+            getUserLocation();
+        }
+
+        function getUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        map.setCenter(pos);
+
+                        marker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                            title: "Mevcut Konumunuz",
+                        });
+                    },
+                    () => {
+                        alert("Konum bilgisi alınamıyor.");
+                    }
+                );
+            } else {
+                alert("Tarayıcınız konum servisini desteklemiyor.");
+            }
+        }
+
+        $(document).ready(function () {
+            initMap();
+        });
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoBhmjJ4yYSWD6lrPIFDjIFuAW88r30gI&callback=initMap" async></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
