@@ -19,19 +19,11 @@ namespace AjaxPaginition.Controllers
             return View();
         }
 
-        public IActionResult IndexA()
-        {
-            return View();
-        }
-        public IActionResult IndexB()
+        public IActionResult Home()
         {
             return View();
         }
 
-        public IActionResult IndexC()
-        {
-            return View();
-        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
