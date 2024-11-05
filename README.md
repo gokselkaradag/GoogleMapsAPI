@@ -1,7 +1,7 @@
-MapTrack
+Google Maps API
 
 
-MapTrack, Google Maps API kullanarak harita tabanlı konum takibi sunan bir ASP.NET Core MVC projesidir. Bu projede, kullanıcının konumunu alarak harita üzerinde gösteren ve harita stilini özelleştiren AJAX tabanlı bir yapı bulunur. Ayrıca, Bootstrap kullanarak modern ve kullanıcı dostu bir arayüz sağlanmıştır.
+Google Maps API kullanarak harita tabanlı konum takibi sunan bir ASP.NET Core MVC projesidir. Bu projede, kullanıcının konumunu alarak harita üzerinde gösteren ve harita stilini özelleştiren AJAX tabanlı bir yapı bulunur. Ayrıca, Bootstrap kullanarak modern ve kullanıcı dostu bir arayüz sağlanmıştır.
 
 Özellikler
 
@@ -23,4 +23,9 @@ Katkıda Bulunma
 Katkıda bulunmak isterseniz, lütfen projeyi fork edin ve pull request gönderin. Her türlü geri bildirim ve katkı projeyi daha da geliştirmemize yardımcı olacaktır.
 
 
-![Ekran görüntüsü 2024-10-24 184754](https://github.com/user-attachments/assets/a5e03530-3ce4-43f0-b87b-6194c4c20187)
+![image](https://github.com/user-attachments/assets/0582f027-15a7-4d93-9d0d-761d5e3371c7)
+
+
+![image](https://github.com/user-attachments/assets/3b65313c-6ae5-4860-9636-07d8482b2f8f)
+
+
